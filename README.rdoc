@@ -1,0 +1,5 @@
+= puppet-graphite module
+
+{<img src='https://codex.cegeka.be/jenkins/job/puppet-graphite/badge/icon' />}[https://codex.cegeka.be/jenkins/job/puppet-graphite/]
+
+This is the graphite module.
