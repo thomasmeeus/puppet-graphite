@@ -1,11 +1,11 @@
 name    'cegeka-graphite'
 version '0.0.1'
-source 'UNKNOWN'
+source 'github'
 author 'cegeka'
 license 'UNKNOWN'
 summary 'UNKNOWN'
 description 'UNKNOWN'
-project_page 'UNKNOWN'
+project_page ''
 
 ## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
+dependency 'ripienaar/concat', '>= 0.1.0'
