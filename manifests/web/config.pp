@@ -8,6 +8,6 @@ class graphite::web::config ($time_zone = undef) {
     group     => 'root',
     mode      => '0644',
     content   => template("${module_name}/local_settings.py.erb"),
-   # notify    => Class['graphite::web::service'],
+    # notify    => Class['graphite::web::service'],
   }
 }

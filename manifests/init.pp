@@ -13,7 +13,7 @@ class graphite (
   $amqp_exchange = 'graphite',
   $amqp_metric_name_in_body = 'False'
   )
-   {
+  {
 
   include graphite::whisper
   include graphite::carbon
