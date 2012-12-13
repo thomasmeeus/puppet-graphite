@@ -117,8 +117,8 @@ WHISPER_AUTOFLUSH = False
 # CARBON_METRIC_INTERVAL = 60
 
 # Enable AMQP if you want to receve metrics using an amqp broker
-<% if @amqp_enable_local -%>
-ENABLE_AMQP = <%= @amqp_enable_local %>
+<% if @amqp_enable_local == true -%>
+ENABLE_AMQP = True
 
 # Verbose means a line will be logged for every metric received
 # useful for testing
