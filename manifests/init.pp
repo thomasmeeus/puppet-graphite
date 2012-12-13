@@ -3,7 +3,7 @@
 # This module manages graphite
 #
 class graphite (
-  $amqp_enable   = undef,
+  $amqp_enable   = false,
   $amqp_verbose  = 'False',
   $amqp_host     = 'localhost',
   $amqp_port     = '5672',
