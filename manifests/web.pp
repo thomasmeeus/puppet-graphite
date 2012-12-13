@@ -20,7 +20,7 @@ class graphite::web (
   class {'graphite::web::config':
     time_zone => $time_zone,
   }
- 
+
   class {'graphite::web::service':
     manage_httpd => $manage_httpd,
   }

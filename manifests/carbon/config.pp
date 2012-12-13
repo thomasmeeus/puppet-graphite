@@ -17,8 +17,8 @@ class graphite::carbon::config {
   $amqp_enable_local = $graphite::amqp_enable
 
   file {'carbon.conf':
-    path    => '/etc/carbon/carbon.conf',
     ensure  => file,
+    path    => '/etc/carbon/carbon.conf',
     content => template("${module_name}/carbon.conf.erb"),
   }
 
