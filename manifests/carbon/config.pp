@@ -11,7 +11,7 @@ class graphite::carbon::config {
   concat::fragment { 'header':
     target => '/etc/carbon/storage-schemas.conf',
     order  => 0,
-    source => "puppet:///${module_name}/graphite/storage-schemas.conf"
+    source => "puppet:///modules/${module_name}/storage-schemas.conf"
   }
 
   $amqp_enable_local = $graphite::amqp_enable
