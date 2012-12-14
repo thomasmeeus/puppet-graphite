@@ -10,7 +10,7 @@
 #
 # * Update documentation
 #
-class graphite::carbon ($amqp_enable = 'False') {
+class graphite::carbon {
 
   include graphite::carbon::package
   include graphite::carbon::config
