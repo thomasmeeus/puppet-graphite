@@ -9,7 +9,7 @@ class graphite::carbon::package {
     # Python txamqp (required for carbon/AMQP integration); edit /etc/carbon.conf to enable AMQP support in carbon;
     # (Patched version)
     package { 'python-txamqp':
-      ensure => '0.3-2.cegeka',
+      ensure => '0.6.1-1.el6',
     }
   }
 }
