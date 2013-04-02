@@ -3,6 +3,7 @@
 # This module manages graphite
 #
 class graphite (
+  $timezone     = $::timezone,
   $amqp_enable   = false,
   $amqp_verbose  = 'True',
   $amqp_host     = 'localhost',
@@ -17,7 +18,9 @@ class graphite (
 
   include graphite::whisper
   include graphite::carbon
-  include graphite::web
+  class { 'graphite::web':
+    timezone => $timezone,
+  }
 
   Class['graphite::whisper'] -> Class['graphite::carbon'] -> Class['graphite::web']
 
