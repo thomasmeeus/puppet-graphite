@@ -1,5 +1,5 @@
 #
-class graphite::web::config ($time_zone = undef) {
+class graphite::web::config ($timezone = $::timezone) {
 
   file {'local_settings.py':
     ensure    => file,

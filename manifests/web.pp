@@ -11,13 +11,13 @@
 # Running web server.
 #
 class graphite::web (
-  $time_zone    = $::timezone,
+  $timezone    = $::timezone,
   $manage_httpd = true)
   {
 
   include graphite::web::package
   class {'graphite::web::config':
-    time_zone => $time_zone,
+    timezone => $timezone,
   }
 
   class {'graphite::web::service':
