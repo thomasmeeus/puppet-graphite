@@ -5,7 +5,7 @@
 class graphite (
   $timezone     = $::timezone,
   $amqp_enable   = false,
-  $amqp_verbose  = 'True',
+  $amqp_verbose  = 'False',
   $amqp_host     = 'localhost',
   $amqp_port     = '5672',
   $amqp_vhost    = '/',
