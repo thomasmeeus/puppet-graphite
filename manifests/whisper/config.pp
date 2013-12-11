@@ -1,3 +1,0 @@
-class graphite::whisper::config {
-
-}
