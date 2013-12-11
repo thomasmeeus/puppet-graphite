@@ -16,12 +16,11 @@ class graphite (
   )
   {
 
-  include graphite::whisper
   include graphite::carbon
   class { 'graphite::web':
     timezone => $timezone,
   }
 
-  Class['graphite::whisper'] -> Class['graphite::carbon'] -> Class['graphite::web']
+  Class['graphite::carbon'] -> Class['graphite::web']
 
 }
