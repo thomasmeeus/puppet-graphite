@@ -1,4 +1,4 @@
-class graphite::carbon::config {
+class graphite::carbon::config ( $datadir = '/var/lib/carbon' ) {
   include concat::setup
 
   concat { '/etc/carbon/storage-schemas.conf':

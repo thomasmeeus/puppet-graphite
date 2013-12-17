@@ -1,6 +1,9 @@
 #
-class graphite::web::config ($timezone = $::timezone) {
-
+class graphite::web::config (
+  $timezone = $::timezone,
+  $datadir  = '/var/lib/carbon'
+)
+{
   file {'local_settings.py':
     ensure    => file,
     path      => '/etc/graphite-web/local_settings.py',
@@ -8,6 +11,5 @@ class graphite::web::config ($timezone = $::timezone) {
     group     => 'root',
     mode      => '0644',
     content   => template("${module_name}/local_settings.py.erb"),
-    # notify    => Class['graphite::web::service'],
   }
 }

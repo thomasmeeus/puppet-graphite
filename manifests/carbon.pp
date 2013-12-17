@@ -10,12 +10,11 @@
 #
 # * Update documentation
 #
-class graphite::carbon {
+class graphite::carbon ( $datadir = '/var/lib/carbon' ) {
 
   include graphite::carbon::package
-  include graphite::carbon::config
+  class { 'graphite::carbon::config': datadir => $datadir }
   include graphite::carbon::service
 
   Class['graphite::carbon::package'] -> Class['graphite::carbon::config'] ~> Class['graphite::carbon::service']
 }
-
