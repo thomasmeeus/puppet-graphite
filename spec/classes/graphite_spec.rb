@@ -10,7 +10,6 @@ describe 'graphite' do
   context 'with default parameters' do
     let (:params) { {} }
 
-<<<<<<< HEAD
     it { should contain_class('graphite::carbon') }
     it { should contain_class('graphite::web').with(
       {
@@ -18,10 +17,6 @@ describe 'graphite' do
         :datadir  => '/var/lib/carbon'
       }
     )}
-=======
-    it { should include_class('graphite::carbon') }
-    it { should contain_class('graphite::web').with_timezone('CET') }
->>>>>>> dd600f8c6ff6077389024da0af0f154ae113ef16
   end
 
   context 'with timezone => Europe/Brussels and datadir => /data/carbon' do
@@ -30,7 +25,6 @@ describe 'graphite' do
       :datadir  => '/data/carbon'
     } }
 
-<<<<<<< HEAD
     it { should contain_class('graphite::carbon') }
     it { should contain_class('graphite::web').with(
       {
@@ -38,9 +32,5 @@ describe 'graphite' do
         :datadir  => '/data/carbon'
       }
     )}
-=======
-    it { should include_class('graphite::carbon') }
-    it { should contain_class('graphite::web').with_timezone('Europe/Brussels') }
->>>>>>> dd600f8c6ff6077389024da0af0f154ae113ef16
   end
 end
