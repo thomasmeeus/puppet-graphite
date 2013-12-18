@@ -10,27 +10,14 @@ describe 'graphite' do
   context 'with default parameters' do
     let (:params) { {} }
 
-    it { should contain_class('graphite::carbon') }
-    it { should contain_class('graphite::web').with(
-      {
-        :timezone => 'CET',
-        :datadir  => '/var/lib/carbon'
-      }
-    )}
+    it { should include_class('graphite::carbon') }
+    it { should contain_class('graphite::web').with_timezone('CET') }
   end
 
-  context 'with timezone => Europe/Brussels and datadir => /data/carbon' do
-    let (:params) { {
-      :timezone => 'Europe/Brussels',
-      :datadir  => '/data/carbon'
-    } }
+  context 'with timezone => Europe/Brussels' do
+    let (:params) { { :timezone => 'Europe/Brussels' } }
 
-    it { should contain_class('graphite::carbon') }
-    it { should contain_class('graphite::web').with(
-      {
-        :timezone => 'Europe/Brussels',
-        :datadir  => '/data/carbon'
-      }
-    )}
+    it { should include_class('graphite::carbon') }
+    it { should contain_class('graphite::web').with_timezone('Europe/Brussels') }
   end
 end
