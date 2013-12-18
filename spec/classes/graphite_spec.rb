@@ -10,7 +10,6 @@ describe 'graphite' do
   context 'with default parameters' do
     let (:params) { {} }
 
-    it { should include_class('graphite::whisper') }
     it { should include_class('graphite::carbon') }
     it { should contain_class('graphite::web').with_timezone('CET') }
   end
@@ -18,7 +17,6 @@ describe 'graphite' do
   context 'with timezone => Europe/Brussels' do
     let (:params) { { :timezone => 'Europe/Brussels' } }
 
-    it { should include_class('graphite::whisper') }
     it { should include_class('graphite::carbon') }
     it { should contain_class('graphite::web').with_timezone('Europe/Brussels') }
   end
