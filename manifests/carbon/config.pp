@@ -1,6 +1,12 @@
 class graphite::carbon::config ( $datadir = '/var/lib/carbon' ) {
   include concat::setup
 
+  file { "${datadir}":
+    ensure => 'directory',
+    owner  => 'carbon',
+    group  => 'carbon'
+  }
+
   concat { '/etc/carbon/storage-schemas.conf':
     owner  => 'root',
     group  => 'root',
