@@ -18,7 +18,7 @@ This module supports configuration of AMQP in carbon.conf.
         yumrepo {'epel': baseurl => 'http://download.fedoraproject.org/pub/epel/6/x86_64', descr => 'Epel repository at Fedora', gpgcheck => '0', }
 
         # Contains patched version of python-txamqp; only required if you enable AMQP in class 'graphite'
-        yumrepo {'cegeka-public': baseurl => 'https://pulp.cegeka.be/staid/shared/cegeka/custom/el6/noarch', descr => 'Cegeka Repo at Cegeka', gpgcheck => '0', }
+        yumrepo {'cegeka-custom-noarch': baseurl => 'https://pulp.cegeka.be/staid/shared/cegeka/custom/el6/noarch', descr => 'Cegeka Repo at Cegeka', gpgcheck => '0', }
 
   }
 
