@@ -10,20 +10,20 @@ This module supports configuration of AMQP in carbon.conf.
 
   # Make sure the required repositories are available:
   stage { 'pre': before => Stage['main'] }
-  
+
   class yumrepos {
-  
+
         yumrepo { 'monitoringsucks': baseurl => 'http://pulp.inuits.eu/pulp/repos/monitoring', descr => 'MonitoringSucks at Inuits', gpgcheck => '0', }
-  
+
         yumrepo {'epel': baseurl => 'http://download.fedoraproject.org/pub/epel/6/x86_64', descr => 'Epel repository at Fedora', gpgcheck => '0', }
-  
+
         # Contains patched version of python-txamqp; only required if you enable AMQP in class 'graphite'
-        yumrepo {'cegeka-public': baseurl => 'https://yum.cegeka.be/cegeka-public/el6/noarch', descr => 'Cegeka Repo at Cegeka', gpgcheck => '0', }
-  
+        yumrepo {'cegeka-public': baseurl => 'https://pulp.cegeka.be/staid/shared/cegeka/custom/el6/noarch', descr => 'Cegeka Repo at Cegeka', gpgcheck => '0', }
+
   }
-  
+
   class {'yumrepos': stage => pre}
- 
+
   # Optional AMQP related parameters, see class definition.
   class {'graphite':
     amqp_enable => true,
@@ -36,7 +36,7 @@ This module supports configuration of AMQP in carbon.conf.
     order      => 15,
     retentions => '10s:1d'
   }
-  
+
   graphite::carbon::storage { 'default_60s_1d':
     pattern    => '.*',
     order      => 20,
