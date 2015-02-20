@@ -1,5 +1,5 @@
 class graphite::carbon::package {
-  package {'carbon':
+  package {'python-carbon':
     ensure => present;
   }
 
